@@ -91,7 +91,9 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
-        ]
+        ],
+        "cs:check": "php vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix --dry-run --ansi",
+        "cs:fix": "php vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix --ansi"
     },
     "conflict": {
         "symfony/symfony": "*"

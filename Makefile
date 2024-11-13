@@ -1,7 +1,7 @@
 .PHONY: help
 .DEFAULT_GOAL = help
 
-dc = docker-compose
+dc = docker compose
 de = $(dc) exec
 composer = $(de) php memory_limit=1 /usr/local/bin/composer
 
@@ -12,6 +12,15 @@ install:	## Installation du projet
 	$(de) php bash -c 'composer install'
 	$(de) php bash -c 'npm i && npm run dev'
 	$(de) php bash -c 'php bin/console key-generate'
+
+
+.PHONY: ps
+ps:
+	$(dc) ps -a
+	@echo
+
+	$(eval APP_ID := $(shell bin/docker-compose ps -q $(APP_SERVICE_NAME) 2> /dev/null))
+	$(eval APP_PORT := $(shell docker inspect $(APP_ID) --format='{{json (index (index .NetworkSettings.Ports "8080/tcp") 0).HostPort}}' 2> /dev/null))
 
 .PHONY: build
 build:	## Lancer les containers docker au start du projet
@@ -24,8 +33,8 @@ build:	## Lancer les containers docker au start du projet
 dev:	## start container
 	$(dc) up -d
 
-.PHONY: in-dc
-in-dc:	## connexion container php
+.PHONY: dcexec
+dcexec:	## connexion container php
 	$(de) php bash
 
 .PHONY: delete

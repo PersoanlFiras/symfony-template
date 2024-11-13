@@ -21,7 +21,7 @@ jobs:
         with:
           php-version: '8.3'
       - name: Copy .env file
-        run: cp .env.example .env
+        run: cp .env .env
       - name: Install dependencies
         run: |
           composer install
@@ -43,7 +43,7 @@ jobs:
         with:
           php-version: '8.3'
       - name: Copy .env file
-        run: cp .env.example .env
+        run: cp .env .env
       - name: Install dependencies
         run: |
           composer require roave/security-advisories:dev-latest
