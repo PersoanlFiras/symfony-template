@@ -2,6 +2,18 @@ controllers:
     resource: ../src/Controller/
     type: annotation
 
+api_login_check:
+    path: /api/login
+
+api_refresh_token:
+    path: /api/token/refresh
+    controller: Gesdinet\JWTRefreshTokenBundle\Controller\RefreshTokenController::refreshAction
+
+api_logout:
+    path: /api/logout
+    controller: App\Controller\SecurityController::logoutAction
+
+
 kernel:
     resource: ../src/Kernel.php
     type: annotation

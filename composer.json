@@ -13,9 +13,10 @@
         "doctrine/doctrine-bundle": "^2.11.1",
         "doctrine/doctrine-migrations-bundle": "^3.3",
         "doctrine/orm": "^2.17",
+        "gesdinet/jwt-refresh-token-bundle": "^1.3",
+        "lexik/jwt-authentication-bundle": "^3.1",
         "phpdocumentor/reflection-docblock": "^5.3",
         "phpstan/phpdoc-parser": "^1.24.4",
-        "predis/predis": "^2.2",
         "sensio/framework-extra-bundle": "^6.2",
         "sixlive/dotenv-editor": "^2.0",
         "symfony/asset": "6.4.*",
@@ -105,6 +106,7 @@
         }
     },
     "require-dev": {
+        "doctrine/doctrine-fixtures-bundle": "^3.6",
         "friendsofphp/php-cs-fixer": "^3.59",
         "friendsoftwig/twigcs": "^6.3",
         "phpstan/phpstan": "^1.10",
