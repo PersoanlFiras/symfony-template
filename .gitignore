@@ -1,5 +1,6 @@
 
 ###> symfony/framework-bundle ###
+/private/*
 .env
 /.env.local
 /.env.local.php
@@ -18,7 +19,6 @@
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
 
-storage-db/
 .idea/
 ###> phpunit/phpunit ###
 /phpunit.xml
